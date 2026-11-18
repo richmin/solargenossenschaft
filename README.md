@@ -6,10 +6,9 @@ Statische Webseite der Solargenossenschaft Zollikofen – ohne CMS, ohne PHP, oh
 - `assets/` – Logo (SVG/PNG) und Fotos
 
 ## Offene Punkte
-- Mitgliederzahl bestätigen (zurzeit «[116]»)
 - Google Fonts lokal einbinden (Datenschutz, nDSG) statt von fonts.googleapis.com zu laden
 - Impressum und Datenschutzerklärung ergänzen
-- Statuten und Beitrittsformular als PDF ablegen
+- Statuten und Beitrittsformular als PDF ablegen (Button «Statuten anfordern» öffnet bis dahin eine E-Mail)
 - Einverständnis der abgebildeten Personen auf den Ausflugsfotos
 
 ## Hosting

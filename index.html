@@ -14,18 +14,30 @@ a{color:#111111}a:hover{color:#5a4a00}
 h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 #statuten{display:none!important;scroll-margin-top:24px}
 #statuten:target{display:flex!important}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
+.site-header{position:sticky;top:0;z-index:50;box-shadow:0 1px 8px rgba(0,0,0,.06)}
+@media (max-width:760px){
+html{scroll-padding-top:120px}
+.site-header-inner{flex-direction:column;align-items:stretch!important;gap:6px!important;padding:10px 16px 0!important}
+.site-logo img{height:38px!important}
+.site-nav{flex-wrap:nowrap!important;overflow-x:auto;gap:0 18px!important;margin:0 -16px;padding:0 16px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.site-nav::-webkit-scrollbar{display:none}
+.site-nav a{white-space:nowrap;flex:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div style="font-family: Inter, system-ui, sans-serif; color: #111111; background: #ffffff; line-height: 1.55; font-size: 17px">
+<div style="font-family: Inter, system-ui, sans-serif; color: #111111; background: #ffffff; line-height: 1.55; font-size: 17px; overflow-x: clip">
 
-<header style="border-bottom: 1px solid #e6e3da; background: #ffffff">
-<div style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#top" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #111111">
+<header class="site-header" style="border-bottom: 1px solid #e6e3da; background: #ffffff">
+<div class="site-header-inner" style="max-width: 1120px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="#top" class="site-logo" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #111111">
 <img src="assets/logo.svg" alt="Logo Solargenossenschaft Zollikofen" style="height: 48px; width: auto; display: block">
 <span style="display: flex; flex-direction: column; line-height: 1.15"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 18px">Solargenossenschaft</span><span style="font-size: 14px; color: #4a4a4a">Zollikofen · seit 1992</span></span>
 </a>
-<nav aria-label="Hauptnavigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 15px; font-weight: 500">
+<nav class="site-nav" aria-label="Hauptnavigation" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; font-size: 15px; font-weight: 500">
 <a href="#anlagen" style="text-decoration: none; padding: 10px 0">Anlagen</a>
 <a href="#mithelfen" style="text-decoration: none; padding: 10px 0">Mithelfen</a>
 <a href="#oekostrom" style="text-decoration: none; padding: 10px 0">Ökostrom</a>
@@ -56,7 +68,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 </section>
 
 <section aria-label="Kennzahlen" style="border-bottom: 1px solid #e6e3da">
-<div style="max-width: 1120px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
+<div style="max-width: 1120px; margin: 0 auto; padding: 40px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 24px">
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 40px">1992</span><span style="color: #4a4a4a; font-size: 15px">gegründet am 4. März</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 40px">4</span><span style="color: #4a4a4a; font-size: 15px">Photovoltaik-Anlagen in Betrieb</span></div>
 <div style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 40px">108 kWp</span><span style="color: #4a4a4a; font-size: 15px">installierte Leistung (SKW1–4)</span></div>
@@ -68,18 +80,18 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
 <div style="flex: 999 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <span style="align-self: flex-start; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; background: #FFE600; padding: 6px 12px; border-radius: 999px">Neu 2026</span>
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Fünfmal mehr Leistung auf der Gemeindeverwaltung</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Fünfmal mehr Leistung auf der Gemeindeverwaltung</h2>
 <p style="margin: 0; color: #333333">33 Jahre lang lieferte unsere erste Anlage zuverlässig Strom – die 162 Module brachten zuletzt noch rund 80 Prozent ihrer ursprünglichen Leistung. Weil die Kabel von 1993 ersetzt werden mussten, haben wir die ganze Anlage erneuert und dafür 65'000 Franken aus dem Genossenschaftsvermögen investiert.</p>
 <p style="margin: 0; color: #333333">Die alten Module wurden in Freiwilligenarbeit abgebaut und gehen in die Weiterverwendung oder ins Recycling. Die neuen Doppelglas-Module stammen bewusst aus europäischer Produktion; montiert hat die GUNEP AG aus Jegenstorf. Zusätzliche Module in Ost-West-Ausrichtung verteilen die Produktion über den Tag.</p>
 <p style="margin: 0; color: #333333">Die Gemeinde verbraucht einen möglichst grossen Teil des Stroms direkt im Haus, zu einem vergünstigten Tarif. Der Rest fliesst ins BKW-Netz. So amortisieren wir die Anlage und sparen für die nächsten Projekte.</p>
 </div>
-<dl style="flex: 1 1 300px; min-width: 0; margin: 0; background: #111111; color: #ffffff; border-radius: 20px; padding: 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px">
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Leistung</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">45.6 kWp</dd></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Erwartete Produktion</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">43'000 kWh</dd></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Module</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">106</dd></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Fläche</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">211 m²</dd></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Investition</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">CHF 65'000</dd></div>
-<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">In Betrieb seit</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: 30px">Aug. 2026</dd></div>
+<dl style="flex: 1 1 300px; min-width: 0; margin: 0; background: #111111; color: #ffffff; border-radius: 20px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr)); gap: 24px 20px">
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Leistung</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">45.6 kWp</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Erwartete Produktion</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">43'000 kWh</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Module</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">106</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Fläche</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">211 m²</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">Investition</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">CHF 65'000</dd></div>
+<div style="display: flex; flex-direction: column; gap: 2px"><dt style="font-size: 14px; color: #bdbdbd">In Betrieb seit</dt><dd style="margin: 0; font-family: Archivo, sans-serif; font-weight: 800; font-size: clamp(22px, 5vw, 30px)">Aug. 2026</dd></div>
 </dl>
 </div>
 </section>
@@ -87,10 +99,10 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <section id="anlagen">
 <div style="max-width: 1120px; margin: 0 auto; padding: 72px 24px 88px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 12px; max-width: 40em">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Unsere Anlagen</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Unsere Anlagen</h2>
 <p style="margin: 0; color: #333333">Alle Solarkraftwerke (SKW) stehen in Zollikofen. Ihr Strom fliesst ins lokale Netz – oder direkt zu den Menschen im Haus.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px">
 
 <article style="border: 1px solid #e6e3da; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
 <img loading="lazy" src="assets/skw1-gemeindeverwaltung-2026.jpg" alt="SKW1: Module auf dem Flachdach der Gemeindeverwaltung" style="width: 100%; height: 220px; object-fit: cover; display: block">
@@ -160,10 +172,10 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <section id="mitmachen" style="background: #111111; color: #ffffff">
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 12px; max-width: 40em">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1; color: #ffffff">Mitmachen mit einem Anteilschein</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1; color: #ffffff">Mitmachen mit einem Anteilschein</h2>
 <p style="margin: 0; color: #d6d6d6">Ihr Geld arbeitet auf Dächern in Ihrer Nachbarschaft. Als Mitglied stimmen Sie an der Generalversammlung mit und sind beim jährlichen Solarausflug dabei.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 16px">
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 14px; color: #bdbdbd">Anteilschein</span><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 36px">CHF 200</span></div>
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 14px; color: #bdbdbd">Anteilschein</span><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 36px">CHF 500</span></div>
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 14px; color: #bdbdbd">Anteilschein</span><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 36px">CHF 1'000</span></div>
@@ -175,10 +187,10 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 </div>
 <div id="statuten" style="border-top: 1px solid #3a3a3a; padding-top: 48px; display: flex; flex-direction: column; gap: 28px">
 <div style="display: flex; flex-direction: column; gap: 10px; max-width: 42em">
-<h3 style="margin: 0; font-size: 30px; color: #ffffff">Die Statuten in Kürze</h3>
+<h3 style="margin: 0; font-size: clamp(24px, 6vw, 30px); color: #ffffff">Die Statuten in Kürze</h3>
 <p style="margin: 0; color: #d6d6d6">Die wichtigsten Punkte aus den Statuten der Genossenschaft Solarkraftwerk Zollikofen. Massgebend ist der vollständige Wortlaut, den wir Ihnen gerne zustellen.</p>
 </div>
-<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<dl style="margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><dt style="font-weight: 600; color: #ffffff">Zweck</dt><dd style="margin: 0; color: #d6d6d6; font-size: 16px">Solarstrom- und Solarwärme-Anlagen bauen, betreiben und fördern, weitere erneuerbare Energien nutzen und über Sonnenenergie und Energiesparen informieren.</dd></div>
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><dt style="font-weight: 600; color: #ffffff">Mitglied werden</dt><dd style="margin: 0; color: #d6d6d6; font-size: 16px">Offen für Privatpersonen, Firmen und öffentliche Körperschaften. Es braucht mindestens einen Anteilschein und ein schriftliches Gesuch; über die Aufnahme entscheidet der Vorstand.</dd></div>
 <div style="border: 1px solid #3a3a3a; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 6px"><dt style="font-weight: 600; color: #ffffff">Anteilscheine</dt><dd style="margin: 0; color: #d6d6d6; font-size: 16px">Zu Fr. 200, 500, 1'000 oder 5'000. Die Anteilscheine werden nicht verzinst.</dd></div>
@@ -205,7 +217,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <figcaption style="font-size: 14px">Sommer 2026: das Abbau-Team auf dem Dach der Gemeindeverwaltung</figcaption>
 </figure>
 <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Mit anpacken statt nur zuschauen</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Mit anpacken statt nur zuschauen</h2>
 <p style="margin: 0">Unser Ziel ist, beim Bau unserer Anlagen möglichst viel selbst zu machen. Eigenleistung senkt die Kosten, und wer mithilft, kennt «seine» Anlage danach bis ins Detail. So haben Genossenschafter 2006 das SKW2 auf dem Nebendach mitgebaut, und 2026 haben Freiwillige die alten Module des SKW1 vom Dach geholt.</p>
 <p style="margin: 0">Darum suchen wir laufend Menschen, die aktiv mithelfen – Vorkenntnisse braucht es keine:</p>
 <ul style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px">
@@ -216,7 +228,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <a href="mailto:armin.thommen@gmail.com?subject=Ich%20helfe%20mit" style="align-self: flex-start; text-decoration: none; padding: 15px 26px; background: #111111; color: #ffffff; border-radius: 999px; font-weight: 600; margin-top: 8px">Ich helfe mit</a>
 </div>
 </div>
-<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<div style="max-width: 1120px; margin: 0 auto; padding: 0 24px 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 16px">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/abbau-skw1-module.jpg" alt="Drei Helfer lösen in der Abendsonne die alten Module vom Gestell" style="width: 100%; height: 280px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px">Module lösen, Reihe für Reihe</figcaption></figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/abbau-skw1-abendsonne.jpg" alt="Zwei Helfer schrauben auf dem Flachdach, im Hintergrund Zollikofen" style="width: 100%; height: 280px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px">Feierabend-Einsatz mit Aussicht</figcaption></figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/abbau-skw1-anschlussdose.jpg" alt="Ein Helfer arbeitet an einer alten Anschlussdose unter den Modulen" style="width: 100%; height: 280px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px">Die Technik von 1993 kommt vom Dach</figcaption></figure>
@@ -226,7 +238,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <section id="oekostrom">
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
 <div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Zollikofer Solarstrom kaufen</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Zollikofer Solarstrom kaufen</h2>
 <p style="margin: 0; color: #333333">Über unsere eigene Ökostrombörse können Haushalte und Firmen den Strom aus unseren Anlagen beziehen – ganz ohne eigenes Dach. Mit jedem Kauf unterstützen Sie den Unterhalt und neue Anlagen in Zollikofen.</p>
 <p style="margin: 0; color: #333333">Sie wählen, wie viel Solarstrom wir pro Jahr für Sie produzieren, und wie lange Ihr Vertrag läuft. Je länger, desto günstiger.</p>
 <a href="mailto:b.merlach@bluewin.ch?subject=Solarstromkauf" style="align-self: flex-start; text-decoration: none; padding: 14px 25px; border: 1.5px solid #111111; border-radius: 999px; font-weight: 600; margin-top: 8px">Bei Kassier Beat Merlach bestellen</a>
@@ -258,8 +270,8 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 
 <section id="aktuell" style="background: #f7f6f1">
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Aktuelles</h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px">
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Aktuelles</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 20px">
 <article style="background: #ffffff; border-radius: 16px; padding: 28px; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 14px; font-weight: 600; color: #4a4a4a">August 2026</span>
 <h3 style="margin: 0; font-size: 22px">Neues SKW1 in Betrieb</h3>
@@ -284,11 +296,11 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 12px; max-width: 42em">
 <span style="font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: #4a4a4a">Solarausflug 2026</span>
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Von der Aare in die Zuckerfabrik</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Von der Aare in die Zuckerfabrik</h2>
 <p style="margin: 0; color: #333333">Am 16. Oktober 2026 fuhren wir mit dem Zug nach Lyss und wanderten der alten Aare entlang nach Aarberg. Nach dem Mittagessen führte uns die Zuckerfabrik Aarberg zwei Stunden lang vom Rübenlager bis in die Produktionshallen. Zum Abschluss lud die Genossenschaft zu einem Trunk im Städtchen ein.</p>
 <p style="margin: 0; color: #333333">Der Solarausflug findet jedes Jahr statt und ist für Mitglieder offen. Die Kosten für die Führung übernimmt die Genossenschaft.</p>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 16px">
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/ausflug-2026-gruppe.jpg" alt="Gruppe mit Helmen und Leuchtwesten vor dem Rundgang" style="width: 100%; height: 300px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px; color: #4a4a4a">Helm auf: Start zur Führung</figcaption></figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/ausflug-2026-ruebenlager.jpg" alt="Blick auf das grosse runde Lager mit Zuckerrüben und das Förderband" style="width: 100%; height: 300px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px; color: #4a4a4a">Das Rübenlager mit Förderbrücke</figcaption></figure>
 <figure style="margin: 0; display: flex; flex-direction: column; gap: 8px"><img loading="lazy" src="assets/ausflug-2026-fabrikhalle.jpg" alt="Förderbänder mit Zuckerrüben in der Fabrikhalle" style="width: 100%; height: 300px; object-fit: cover; border-radius: 16px; display: block"><figcaption style="font-size: 14px; color: #4a4a4a">In der Halle: Rüben auf dem Weg zur Wäsche</figcaption></figure>
@@ -299,10 +311,10 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 <section id="ueber-uns">
 <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
 <div style="display: flex; flex-direction: column; gap: 12px; max-width: 40em">
-<h2 style="margin: 0; font-size: 44px; line-height: 1.1">Über uns</h2>
+<h2 style="margin: 0; font-size: clamp(30px, 7vw, 44px); line-height: 1.1">Über uns</h2>
 <p style="margin: 0; color: #333333">Eine kleine Gruppe umweltbewusster Zollikoferinnen und Zollikofer nahm das Projekt «Solar 91» zum Anlass, eine Genossenschaft zu gründen – mit dem Ziel, Sonnenenergie und andere erneuerbare Energien in der Gemeinde zu fördern.</p>
 </div>
-<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border-top: 2px solid #111111">
+<ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 0; border-top: 2px solid #111111">
 <li style="padding: 18px 16px 0 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px">1992</span><span style="font-size: 15px; color: #333333">Gründung</span></li>
 <li style="padding: 18px 16px 0 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px">1993</span><span style="font-size: 15px; color: #333333">SKW1, 8.9 kWp</span></li>
 <li style="padding: 18px 16px 0 0; display: flex; flex-direction: column; gap: 4px"><span style="font-family: Archivo, sans-serif; font-weight: 800; font-size: 24px">2004</span><span style="font-size: 15px; color: #333333">Wasserkraftwerk Graben (bis 2019)</span></li>
@@ -313,7 +325,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 </ol>
 <div style="display: flex; flex-direction: column; gap: 16px">
 <h3 style="margin: 0; font-size: 24px">Vorstand</h3>
-<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px">
+<ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 12px">
 <li style="border: 1px solid #e6e3da; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column"><span style="font-weight: 600">Armin Thommen</span><span style="font-size: 14px; color: #4a4a4a">Präsident</span></li>
 <li style="border: 1px solid #e6e3da; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column"><span style="font-weight: 600">Bruno Vanoni</span><span style="font-size: 14px; color: #4a4a4a">Vizepräsident / Sekretär</span></li>
 <li style="border: 1px solid #e6e3da; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column"><span style="font-weight: 600">Beat Merlach</span><span style="font-size: 14px; color: #4a4a4a">Kassier / Anlagewart</span></li>
@@ -329,7 +341,7 @@ h1,h2,h3{font-family:Archivo,Inter,sans-serif;letter-spacing:-0.01em}
 
 <footer id="kontakt" style="background: #111111; color: #e8e8e8">
 <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 40px; display: flex; flex-direction: column; gap: 40px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 32px">
 <div style="display: flex; flex-direction: column; gap: 12px">
 <span style="align-self: flex-start; background: #ffffff; border-radius: 12px; padding: 10px 12px; display: flex"><img src="assets/logo.svg" alt="Logo Solargenossenschaft Zollikofen" style="height: 44px; width: auto; display: block"></span>
 <span style="font-family: Archivo, sans-serif; font-weight: 700; color: #ffffff">Genossenschaft Solarkraftwerk Zollikofen</span>
